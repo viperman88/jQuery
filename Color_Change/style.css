@@ -1,0 +1,23 @@
+* {
+    font-family: sans-serif;
+}
+
+h2, h1, h3 {
+    text-align: center;
+}
+
+#large_box {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: lightblue;
+    height: auto;
+}
+
+#large_box div {
+    background-color: blue;
+    display: inline-block;
+    width: 33%;
+    height: 130px;
+}

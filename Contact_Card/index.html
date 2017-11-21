@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Hello, world!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <nav class="navbar navbar-light">
+            <span class="navbar-brand mb-0 h1"><h1>jQuery Form Basics</h1></span>
+        </nav>
+
+        <div id="left" class="container">
+            <form class="form1">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" id="first_name" placeholder="First Name">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" id="last_name" placeholder="Last Name">
+                    </div>
+                </div>
+
+                <h5>Description:</h5>
+                <div class="form-group">
+                    <label for="exampleTextarea">Textarea</label>
+                    <textarea class="form-control" name="textArea" id="exampleTextarea" rows="3"></textarea>
+                    <input id="submit" class="btn btn-primary btn-sm" type="submit" value="Add User">
+                </div>
+            </form>
+        </div>
+
+        <div id="right" class="container">
+            <!-- <div id="dynamic" class="container">
+                Dynamic content will go here
+            </div> -->
+        </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <script>
+        $('.btn').click(() => {
+            let first = $("#first_name").val();
+            let last = $("#last_name").val();
+            let desc = $("textarea").val();
+
+            $('#right').append('<div id="dynamic" class="container"><h3>' +
+                first + ' ' + last + '</h3><p>Click for description</p><h5 id="hide">' + desc + '</h5></div>');
+
+            $('#first_name').val("");
+            $('#last_name').val("");
+            $('textarea').val("");
+            return false;
+        });
+
+        // $(document).on('click', '#dynamic', () => {
+        //        //Toggle the #cards' childrens' display property
+        //     $(this).children().toggle();
+        // });
+        $(document).on('click', '#dynamic', function() {
+            //Toggle the #cards' childrens' display property
+            $(this).children().toggle();
+        });
+    </script>
+</body>
+
+</html>

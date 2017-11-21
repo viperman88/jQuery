@@ -1,0 +1,29 @@
+#left {
+    border: 1px solid black;
+    display: inline-block;
+    width: 48%;
+    height: 700px;
+    vertical-align: top;
+}
+
+#right {
+    border: 1px solid black;
+    display: inline-block;
+    width: 48%;
+    height: 700px;
+    overflow-x: scroll;
+}
+
+#dynamic {
+    border: 1px solid black;
+    height: 200px;
+    margin-top: 20px;
+}
+
+#hide {
+    display: none;
+}
+
+input, textarea {
+    display: block;
+}
